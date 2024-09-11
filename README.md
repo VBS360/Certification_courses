@@ -1,3 +1,5 @@
+![A_futuristic_and_sleek_image_representing_a_Python](https://github.com/user-attachments/assets/6a127c62-d6d6-439e-bd12-1be7769231e9)
+
 **100 Days of Python Journey 🚀**
 Welcome to my 100 Days of Python journey! This repository contains all the projects, exercises, and code challenges I've completed while mastering Python. The goal of this journey was to learn Python by building real-world projects, covering topics from basic syntax to advanced data science libraries and machine learning algorithms.
 
@@ -19,4 +21,3 @@ Day 91-100: Advanced Machine Learning and Final Projects
 - Run the Python script: python script_name.py
 
 Stay tuned for more updates as I continue refining my skills and adding new projects!
-![A_futuristic_and_sleek_image_representing_a_Python](https://github.com/user-attachments/assets/6a127c62-d6d6-439e-bd12-1be7769231e9)
