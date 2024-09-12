@@ -4,7 +4,7 @@ I'm thinking of a number between 1 and 100.""")
 
 difficulty_level = input("Choose a difficulty. Type 'easy' or 'hard': ")
 
-comp_num = random.randrange(0,100)
+comp_num = random.randrange(0,101)
 attempt_easy = 10
 attempt_hard = 5
 
