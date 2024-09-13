@@ -36,11 +36,12 @@ user_bill = 0
 user_payment = 0
 
 def remaining_resouces():
+    global resources,collection
     rem_water = resources["water"]
     rem_milk = resources["milk"]
     rem_coffee = resources["coffee"]
     total_collection = collection
-    print(f"{rem_water}\n {rem_milk}\n {rem_coffee}\n {total_collection}\n")
+    print(f" remaining water = {rem_water}\n remaining milk = {rem_milk}\n remaining coffee = {rem_coffee}\n Total collection = {total_collection}\n")
 
 def machine_start():
     global user_choice, collection, user_bill
@@ -88,32 +89,38 @@ def payment():
         return machine_start()
 
 def make_coffee():
-    global user_choice, collection
+    global user_choice, collection,resources
     if user_choice == "espresso":
         if resources["water"] >= MENU["espresso"]["ingredients"]["water"] and resources["milk"] >= MENU["espresso"]["ingredients"]["milk"] and resources["coffee"] >= MENU["espresso"]["ingredients"]["coffee"]:
-            resources["water"] == resources["water"] - MENU["espresso"]["ingredients"]["water"]
-            resources["milk"] == resources["milk"] - MENU["espresso"]["ingredients"]["milk"]
+            resources["water"] = resources["water"] - MENU["espresso"]["ingredients"]["water"]
+            resources["milk"] = resources["milk"] - MENU["espresso"]["ingredients"]["milk"]
             resources["coffee"] = resources["coffee"] - MENU["espresso"]["ingredients"]["coffee"]
             payment()
         else:
             for ingredient in resources:
-                if resources[ingredient] < MENU["espresso"]["ingredients"]["ingredient"]:
+                if resources[ingredient] < MENU["espresso"]["ingredients"][ingredient]:
                     print(f"Sorry there is not enough {ingredient}")
                     return machine_start()
     elif user_choice == "latte":
         if resources["water"] >= MENU["latte"]["ingredients"]["water"] and resources["milk"] >= MENU["latte"]["ingredients"]["milk"] and resources["coffee"] >= MENU["latte"]["ingredients"]["coffee"]:
+            resources["water"] = resources["water"] - MENU["latte"]["ingredients"]["water"]
+            resources["milk"] = resources["milk"] - MENU["latte"]["ingredients"]["milk"]
+            resources["coffee"] = resources["coffee"] - MENU["latte"]["ingredients"]["coffee"]
             payment()
         else:
             for ingredient in resources:
-                if resources[ingredient] < MENU["latte"]["ingredients"]["ingredient"]:
+                if resources[ingredient] < MENU["latte"]["ingredients"][ingredient]:
                     print(f"Sorry there is not enough {ingredient}")
                     return machine_start()
     elif user_choice == "cappuccino":
         if resources["water"] >= MENU["cappuccino"]["ingredients"]["water"] and resources["milk"] >= MENU["cappuccino"]["ingredients"]["milk"] and resources["coffee"] >= MENU["cappuccino"]["ingredients"]["coffee"]:
+            resources["water"] = resources["water"] - MENU["cappuccino"]["ingredients"]["water"]
+            resources["milk"] = resources["milk"] - MENU["cappuccino"]["ingredients"]["milk"]
+            resources["coffee"] = resources["coffee"] - MENU["cappuccino"]["ingredients"]["coffee"]
             payment()
         else:
             for ingredient in resources:
-                if resources[ingredient] < MENU["cappuccino"]["ingredients"]["ingredient"]:
+                if resources[ingredient] < MENU["cappuccino"]["ingredients"][ingredient]:
                     print(f"Sorry there is not enough {ingredient}")
                     return machine_start()
     elif user_choice == "report":
