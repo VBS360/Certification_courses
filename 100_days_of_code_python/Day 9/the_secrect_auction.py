@@ -8,8 +8,8 @@ def bid(name,bid_val):
     
     bid_details[name] = bid_val # Push data in the dictionary
     
-    other_bid = input("Are there any other bidder? Type 'Yes' or 'No'.: ")
-    if other_bid == "Yes":
+    other_bid = input("Are there any other bidder? Type 'Yes' or 'No'.: ").lower()
+    if other_bid == "yes":
 #         print("\n"*100)                 #To clear screen
         return bid(name,bid_val)
     else:
