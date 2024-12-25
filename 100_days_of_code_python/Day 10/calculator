@@ -1,0 +1,35 @@
+def calculator(first_num, second_num, final_num):
+    first_num = float(input("What is the first number? \n"))
+    operation = input("""+\n-\n*\n/\nPick an opeartion: """)
+    second_num = float(input("What is the second number? \n"))
+    return operations(first_num, second_num, operation)
+    
+def operations(first_num, second_num, operation):
+    if operation == "+":
+        final_num = first_num + second_num
+    elif operation == "-":
+        final_num = first_num - second_num
+    elif operation == "*":
+        final_num = first_num * second_num
+    elif operation == "/":
+        final_num = first_num / second_num
+    else:
+        print("Enter proper value for operation.")
+    print(f"{first_num} {operation} {second_num} = {final_num}")
+    
+    cont_cal = input(f"Type 'y' to continue calculation with {final_num}, or type 'n' start a new calculation").lower()
+    
+    if cont_cal == 'y':
+        return cont_calculation(final_num)
+    elif cont_cal == 'n':
+        return calculator(first_num, second_num, final_num)
+    else:
+        pass
+        
+def cont_calculation(final_num):
+        first_num = final_num
+        operation = input("""+\n-\n*\n/\nPick an opeartion: """)
+        second_num = int(input("What is the second number? \n"))
+        return operations(first_num, second_num, operation)
+
+calculator(0, 0, 0)
