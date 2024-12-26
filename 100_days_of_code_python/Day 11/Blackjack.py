@@ -10,8 +10,8 @@ def game_start():
             # Randomly select two cards for both the player and the computer
             your_choice = random.choices(cards, k=2)
             computer_choice = random.choices(cards, k=2)
-            sum_your_choice = sum(your_choice)
-            sum_computer_choice = sum(computer_choice)
+            sum_your_choice = sum(your_choice)         # This line shows error in jupyter notebook due to a bug.
+            sum_computer_choice = sum(computer_choice) # The line is completely true and valid in other environments (VS code).
 
             print(f"Your cards: {your_choice}, current_score: {sum_your_choice}")
             print(f"Computer's first card: {computer_choice[0]}")
