@@ -5,7 +5,7 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def game_start():
     while True:
-        game_start = input(print("Do you want to play a game of Blackjack? Type 'y' or 'n': ")).lower()
+        game_start = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
         if game_start == 'y':
             # Randomly select two cards for both the player and the computer
             your_choice = random.choices(cards, k=2)
